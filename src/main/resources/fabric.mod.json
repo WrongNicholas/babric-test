@@ -19,7 +19,8 @@
   "environment": "*",
   "entrypoints": {
     "stationapi:event_bus": [
-      "io.github.wrongnicholas.wojismod.events.init.InitListener"
+      "io.github.wrongnicholas.wojismod.events.init.InitListener",
+      "io.github.wrongnicholas.wojismod.WojisMod"
     ],
     "stationapi:event_bus_client": [
     ],
