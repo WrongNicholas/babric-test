@@ -1,6 +1,6 @@
 {
   "parent": "block/cube_all",
   "textures": {
-    "all": "wojismod:block/moonrock_block"
+    "all": "wojismod:block/wasteland_sand_block"
   }
 }

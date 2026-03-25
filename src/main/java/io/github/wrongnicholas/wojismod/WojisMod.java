@@ -1,11 +1,15 @@
 package io.github.wrongnicholas.wojismod;
 
-import io.github.wrongnicholas.wojismod.block.MoonrockBlock;
+import io.github.wrongnicholas.wojismod.block.WastelandSandBlock;
 import net.mine_diver.unsafeevents.listener.EventListener;
 import net.minecraft.block.Block;
-import net.minecraft.world.biome.Biome;
+import net.minecraft.world.dimension.Dimension;
 import net.modificationstation.stationapi.api.event.registry.BlockRegistryEvent;
+import net.modificationstation.stationapi.api.event.registry.DimensionRegistryEvent;
 import net.modificationstation.stationapi.api.mod.entrypoint.Entrypoint;
+import net.modificationstation.stationapi.api.registry.DimensionContainer;
+import net.modificationstation.stationapi.api.registry.DimensionRegistry;
+import net.modificationstation.stationapi.api.util.Identifier;
 import net.modificationstation.stationapi.api.util.Namespace;
 import org.apache.logging.log4j.Logger;
 
@@ -16,15 +20,16 @@ public class WojisMod {
     @Entrypoint.Logger
     public static Logger LOGGER;
 
-    public static Block moonrockBlock;
+    public static Block wastelandSandBlock;
 
     @EventListener
     public void registerBlocks(BlockRegistryEvent event) {
-        moonrockBlock = new MoonrockBlock(NAMESPACE.id("moonrock_block"))
-                .setHardness(0.8F)
-                .setResistance(20.0F)
-                .setOpacity(3)
-                .setSoundGroup(Block.STONE_SOUND_GROUP)
-                .setTranslationKey(NAMESPACE, "moonrock_block");
+        wastelandSandBlock = new WastelandSandBlock(NAMESPACE.id("wasteland_sand_block"))
+                .setHardness(0.3F)
+                .setResistance(0.3F)
+                .setSoundGroup(Block.SAND_SOUND_GROUP)
+                .setTranslationKey(NAMESPACE, "wasteland_sand_block");
     }
+
+
 }

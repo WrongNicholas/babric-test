@@ -20,7 +20,9 @@
   "entrypoints": {
     "stationapi:event_bus": [
       "io.github.wrongnicholas.wojismod.events.init.InitListener",
-      "io.github.wrongnicholas.wojismod.WojisMod"
+      "io.github.wrongnicholas.wojismod.biome.BiomeListener",
+      "io.github.wrongnicholas.wojismod.WojisMod",
+      "io.github.wrongnicholas.wojismod.gen.dim.WojisModDimensions"
     ],
     "stationapi:event_bus_client": [
     ],

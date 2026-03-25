@@ -4,8 +4,8 @@ import net.minecraft.block.material.Material;
 import net.modificationstation.stationapi.api.template.block.TemplateBlock;
 import net.modificationstation.stationapi.api.util.Identifier;
 
-public class MoonrockBlock extends TemplateBlock {
-    public MoonrockBlock(Identifier identifier) {
-        super(identifier, Material.STONE);
+public class WastelandSandBlock extends TemplateBlock {
+    public WastelandSandBlock(Identifier identifier) {
+        super(identifier, Material.SAND);
     }
 }
