@@ -1,8 +1,9 @@
 package io.github.wrongnicholas.wojismod.gen.dim;
 
+import io.github.wrongnicholas.wojismod.gen.biome.SpaceBiomeSource;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.EnvironmentInterface;
-import net.minecraft.world.chunk.ChunkSource;
+import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.dimension.Dimension;
 import net.modificationstation.stationapi.api.client.world.dimension.TravelMessageProvider;
 
@@ -20,5 +21,10 @@ public class SpaceDimension extends Dimension {
     @Override
     public boolean hasWorldSpawn() {
         return true;
+    }
+
+    @Override
+    public void initBiomeSource() {
+        biomeSource = new SpaceBiomeSource(this.world);
     }
 }
