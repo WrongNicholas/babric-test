@@ -1,0 +1,6 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "wojismod:block/red_cliff_rock_block"
+  }
+}

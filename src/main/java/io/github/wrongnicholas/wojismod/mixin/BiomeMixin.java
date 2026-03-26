@@ -13,7 +13,7 @@ public class BiomeMixin {
     private void wojismod$getSkyColor(float temperature, CallbackInfoReturnable<Integer> cir) {
         Biome self = (Biome)(Object)this;
 
-        if (self == SpaceBiomes.SPACE)
+        if (self == SpaceBiomes.WASTELANDS || self == SpaceBiomes.CLIFFS)
         {
             cir.setReturnValue(0x0F0505);
         }

@@ -9,18 +9,16 @@ import net.modificationstation.stationapi.api.worldgen.biome.BiomeBuilder;
 import net.modificationstation.stationapi.api.worldgen.surface.SurfaceBuilder;
 
 public class SpaceBiomes {
-    public static Biome SPACE;
+    public static Biome WASTELANDS;
+    public static Biome CLIFFS;
 
     @EventListener
     public void registerBiomes(BiomeRegisterEvent event) {
-        SPACE = BiomeBuilder.start("space")
+        WASTELANDS = BiomeBuilder.start("wastelands")
                 .fogColor(0x3A1A14)
-                .surfaceRule(
-                        SurfaceBuilder.start(WojisMod.wastelandSandBlock)
-                                .ground(1)
-                                .replace(Block.STONE)
-                                .build()
-                )
+                .build();
+        CLIFFS = BiomeBuilder.start("cliffs")
+                .fogColor(0x3A1A14)
                 .build();
     }
 }

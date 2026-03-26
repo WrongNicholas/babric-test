@@ -1,15 +1,23 @@
 package io.github.wrongnicholas.wojismod.gen.biome;
 
+import net.minecraft.util.math.noise.OctavePerlinNoiseSampler;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.source.BiomeSource;
 
+import java.util.Random;
+
 public class SpaceBiomeSource extends BiomeSource {
-    private final Biome biome;
+    private final OctavePerlinNoiseSampler biomeNoise;
 
     public SpaceBiomeSource(World world) {
         super(world);
-        this.biome = SpaceBiomes.SPACE;
+        this.biomeNoise = new OctavePerlinNoiseSampler(new Random(world.getSeed()), 4);
+    }
+
+    private Biome getBiomeAt(int x, int z) {
+        double mesa = this.biomeNoise.sample(x * 0.0075D, z * 0.0075D);
+        return mesa > 0.04D ? SpaceBiomes.CLIFFS : SpaceBiomes.WASTELANDS;
     }
 
     @Override
@@ -30,11 +38,18 @@ public class SpaceBiomeSource extends BiomeSource {
             this.weirdnessMap = new double[width * depth];
         }
 
-        for (int i = 0; i < width * depth; i++) {
-            biomes[i] = biome;
-            this.temperatureMap[i] = 0.5D;
-            this.downfallMap[i] = 0.0D;
-            this.weirdnessMap[i] = 0.0D;
+        int i = 0;
+        for (int dz = 0; dz < depth; dz++) {
+            for (int dx = 0; dx < width; dx++) {
+                int worldX = x + dx;
+                int worldZ = z + dz;
+
+                biomes[i] = getBiomeAt(worldX, worldZ);
+                this.temperatureMap[i] = 0.5D;
+                this.downfallMap[i] = 0.0D;
+                this.weirdnessMap[i] = 0.0D;
+                i++;
+            }
         }
 
         return biomes;
@@ -46,12 +61,6 @@ public class SpaceBiomeSource extends BiomeSource {
             map = new double[width * depth];
         }
 
-        for (int i = 0; i < width * depth; i++) {
-            map[i] = 1.0D;
-        }
-
-        this.temperatureMap = map;
-
         if (this.downfallMap == null || this.downfallMap.length < width * depth) {
             this.downfallMap = new double[width * depth];
         }
@@ -61,10 +70,12 @@ public class SpaceBiomeSource extends BiomeSource {
         }
 
         for (int i = 0; i < width * depth; i++) {
+            map[i] = 0.5D;
             this.downfallMap[i] = 0.0D;
             this.weirdnessMap[i] = 0.0D;
         }
 
+        this.temperatureMap = map;
         return map;
     }
 }
