@@ -1,5 +1,7 @@
 {
   "values": [
-    "wojismod:red_cliff_rock_block"
+    "spacemod:red_cliff_rock_block",
+    "spacemod:orange_cliff_rock_block",
+    "spacemod:white_cliff_rock_block"
   ]
 }

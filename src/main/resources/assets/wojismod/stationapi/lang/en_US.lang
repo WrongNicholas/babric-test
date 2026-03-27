@@ -1,5 +1,0 @@
-# @ is a shorthand for the current mod id, which is wojismod. E.g: tile.@.redclay.name
-tile.@.wasteland_sand_block.name=Wasteland Sand
-tile.@.red_cliff_sand_block.name=Red Cliff Sand
-tile.@.orange_cliff_sand_block.name=Orange Cliff Sand
-tile.@.red_cliff_rock_block.name=Red Cliff Rock

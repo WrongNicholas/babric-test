@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "id": "wojismod",
+  "id": "spacemod",
   "version": "${version}",
 
   "name": "Example Mod",
@@ -14,15 +14,17 @@
   },
 
   "license": "CC0-1.0",
-  "icon": "assets/wojismod/icon.png",
+  "icon": "assets/spacemod/icon.png",
 
   "environment": "*",
   "entrypoints": {
     "stationapi:event_bus": [
-      "io.github.wrongnicholas.wojismod.events.init.InitListener",
-      "io.github.wrongnicholas.wojismod.gen.biome.SpaceBiomes",
-      "io.github.wrongnicholas.wojismod.WojisMod",
-      "io.github.wrongnicholas.wojismod.gen.dim.WojisModDimensions"
+      "io.github.wrongnicholas.spacemod.events.init.InitListener",
+      "io.github.wrongnicholas.spacemod.gen.biome.SpaceBiomes",
+      "io.github.wrongnicholas.spacemod.SpaceMod",
+      "io.github.wrongnicholas.spacemod.block.SpaceBlocks",
+      "io.github.wrongnicholas.spacemod.item.SpaceItems",
+      "io.github.wrongnicholas.spacemod.gen.dim.SpaceModDimensions"
     ],
     "stationapi:event_bus_client": [
     ],
@@ -30,7 +32,7 @@
     ]
   },
   "mixins": [
-    "wojismod.mixins.json"
+    "spacemod.mixins.json"
   ],
 
   "depends": {

@@ -1,0 +1,6 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "spacemod:block/white_cliff_rock_block"
+  }
+}
